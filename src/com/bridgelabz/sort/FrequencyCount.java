@@ -19,7 +19,7 @@ public class FrequencyCount {
 		
 		arr = str.split(" ",0);
 		str2 = arr.toString();
-		Utility.printDistinct(str2);
+		Utility.printDistinct(str);
 		
 
 		

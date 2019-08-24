@@ -57,6 +57,9 @@ public class Utility {
 	
 	static final int NO_OF_CHARS = 256; 
 	/* Print duplicates present in the passed string */
+    /**
+     * @param str
+     */
     public static void printDistinct(String str) 
     { 
         // Create an array of size 256 and count of 
@@ -75,5 +78,26 @@ public class Utility {
             if (count[(int)str.charAt(i)] == 1) 
                 System.out.print(str.charAt(i)); 
     } 
-
+   	// Function to check a number is prime or not
+    	/**
+    	 * @param n
+    	 * @return
+    	 */
+    	public static boolean isPrime(int n) 
+    	{
+    		int c = 0;
+    		for(int i = 1; i<=n; i++)
+    		{
+    			if(n%i == 0)
+    				c++;
+    		}
+    		if(c == 2)
+    			return true;
+    		else
+    			return false;
+    		
+    	}
+    	
+    	
+    
 }
