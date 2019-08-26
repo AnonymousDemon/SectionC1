@@ -1,5 +1,7 @@
 package com.bridgelabz.utilityC;
 
+import java.util.Random;
+
 public class Utility {
 	
 	public static int binarySearch(int arr[], int l, int r, int x) 
@@ -97,7 +99,6 @@ public class Utility {
     			return false;
     		
     	}
-    	
-    	
-    
+    	    
+    	    	    
 }

@@ -8,21 +8,16 @@ public class Mergesort1 {
 		// TODO Auto-generated method stub
 
 		
-	        String[] ClassOne = { "Kring", "Panda", "Soliel", "Darryl", "Chan", "Matang", "Jollibee.", "Inasal" };
-	        String[] ClassTwo = { "Minnie", "Kitty", "Madonna", "Miley", "Zoom-zoom", "Cristine", "Bubbles", "Ara", "Rose", "Maria" };
-	        String[] names = new String[ClassOne.length + ClassTwo.length];
+		String[] strArr = { "rishi", "vicky", "wasim", "naufil", "abhishek" };
+		System.out.println("Unsorted Array");
+		sortUtility.printArray2(strArr);
+		System.out.println();
 
-	        sortUtility.mergeSort(ClassOne);
-	        sortUtility.mergeSort(ClassTwo);
+		sortUtility.mergeSort(strArr, 0, strArr.length - 1);
+		
+		System.out.println("Sorted Array using Merge sort");
+		sortUtility.printArray2(strArr);
 
-	        sortUtility.merge(names, ClassOne, ClassTwo);
-
-	        sortUtility.mergeSort(names);
-	        //Arrays.sort(names);
-
-	        for (String ClassThree : names) {
-	            System.out.println(ClassThree);
-	}
 
 }
 }

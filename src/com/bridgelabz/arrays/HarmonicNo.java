@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class HarmonicNo {
 
-	static double harmonic(int n) {
-		double h = 1;
-		for (double i = 2; i <= n; i++) {
-			h = h + 1 / i;
+	static String harmonic(int n) {
+		int h = 1;
+		String x =null;
+		for (int i = 2; i <= n; i++) {
+		 x = h +""+ 1 / i;
 		}
-		return h;
+		return x;
 	}
 
 	public static void main(String[] args) {

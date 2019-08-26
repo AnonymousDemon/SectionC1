@@ -118,38 +118,71 @@ public class sortUtility {
         } 
     } 
 
+    
+    public static void printArray2(String[] strArr) {
+		for (int i = 0; i < strArr.length; i++) {
+			System.out.print(strArr[i] + " ");
+		}
+	}
+
     //Merge sort of strings
-    public static void mergeSort(String[] names) {
-        if (names.length > 2) {
-            String[] left = new String[names.length / 2];
-            String[] right = new String[names.length - names.length / 2];
+    public static void mergeSort(String[] arr, int low, int high) {
+    	if (low < high) {
+			int mid = (low + high) / 2;
+			// Sort first and second halves
+			mergeSort(arr, low, mid);
+			mergeSort(arr, mid + 1, high);
 
-            for (int i = 0; i < left.length; i++) {
-                left[i] = names[i];
-            }
-
-            for (int i = 0; i < right.length; i++) {
-                right[i] = names[i + names.length / 2];
-            }
-
-            mergeSort(left);
-            mergeSort(right);
-            merge(names, left, right);
+            merge(arr, low, mid, high);
         }
     }
 
-    public static void merge(String[] names, String[] left, String[] right) {
-        int a = 0;
-        int b = 0;
-        for (int i = 0; i < names.length; i++) {
-            if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
-                names[i] = left[a];
-                a++;
-            } else {
-                names[i] = right[b];
-                b++;
-            }
-        }
+    public static void merge(String[] arr, int low, int mid, int high) {
+    	// Find sizes of two subarrays to be merged
+    			int n1 = mid - low + 1;
+    			int n2 = high - mid;
+
+    			/* Create temp arrays */
+    			String L[] = new String[n1];
+    			String R[] = new String[n2];
+
+    			/* Copy data to temp arrays */
+    			for (int i = 0; i < n1; ++i)
+    				L[i] = arr[low + i];
+    			for (int j = 0; j < n2; ++j)
+    				R[j] = arr[mid + 1 + j];
+
+    			/* Merge the temp arrays */
+
+    			// Initial indexes of first and second subarrays
+    			int i = 0, j = 0;
+
+    			// Initial index of merged subarry array
+    			int k = low;
+    			while (i < n1 && j < n2) {
+    				if (L[i].compareTo(R[j]) <= 0) {
+    					arr[k] = L[i];
+    					i++;
+    				} else {
+    					arr[k] = R[j];
+    					j++;
+    				}
+    				k++;
+    			}
+
+    			/* Copy remaining elements of L[] if any */
+    			while (i < n1) {
+    				arr[k] = L[i];
+    				i++;
+    				k++;
+    			}
+
+    			/* Copy remaining elements of R[] if any */
+    			while (j < n2) {
+    				arr[k] = R[j];
+    				j++;
+    				k++;
+    			}
     }
 }
 
