@@ -1,5 +1,6 @@
 package com.bridgelabz.utilityC;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -132,6 +133,167 @@ public class Utility {
     		scanner.close();
 
     	}
+    	
+    	/**
+    	 * @param num
+    	 * @return
+    	 */
+    	public static double harmonicSeries(int num) {
+    		double sum = 1;
+    		if (num == 1) {
+    			return 1.0;
+    		} else {
+    			for (int i = 2; i <= num; i++) {
+    				sum = sum + ((double) 1 / i);
+    			}
+    			return sum;
+    		}
+
+    	}
+
+    	/**
+    	 * @return
+    	 */
+    	public static int rollDice() {
+    		Random random = new Random();
+    		return (int) random.nextInt(6) + 1;// 1 to 6
+    	}
+    	
+    	/**
+    	 * @param num1
+    	 * @return
+    	 */
+    	public static boolean isPalindrome(int num1) {
+    		int sum = 0;
+    		int r;
+    		int temp = num1;
+    		if (num1 <= 10) {
+    			return false;
+    		} else {
+    			while (num1 > 0) {
+    				r = num1 % 10;
+    				sum = (sum * 10) + r;
+    				num1 = num1 / 10;
+    			}
+    			if (temp == sum)
+    				return true;
+    			else
+    				return false;
+
+    		}
+
+    	}
+
+
+    	/**
+    	 * @param num1
+    	 * @param num2
+    	 * @return
+    	 */
+    	public static boolean isAnagram(int num1, int num2) {
+    		String str1, str2;
+    		str1 = String.valueOf(num1);
+    		str2 = String.valueOf(num2);
+    		if (str1.length() != str2.length()) {
+    			return false;
+    		} else {
+    			char[] ch1 = new char[str1.length()];
+    			for (int i = 0; i < ch1.length; i++) {
+    				ch1[i] = str1.charAt(i);
+    			}
+    			char[] ch2 = new char[str2.length()];
+    			for (int i = 0; i < ch2.length; i++) {
+    				ch2[i] = str2.charAt(i);
+    			}
+    			Arrays.sort(ch1);
+    			Arrays.sort(ch2);
+
+    			if (Arrays.equals(ch1, ch2)) {
+    				return true;
+    			} else {
+
+    				return false;
+    			}
+    		}
+
+    	}
+    	
+    	public static String[] shuffleCardsDeck(String[] arr) {
+    		Random random = new Random();
+    		int f1, f2;
+    		String temp;
+    		for (int i = 0; i < 52; i++) {
+    			f1 = random.nextInt(51);
+    			f2 = random.nextInt(51);
+    			if (f1 != f2) {
+    				temp = arr[f1];
+    				arr[f1] = arr[f2];
+    				arr[f2] = temp;
+    			}
+    		}
+    		return arr;
+
+    	}
+    	
+    	/**
+    	 * @param arr
+    	 * @return
+    	 */
+    	public static int findRepeatedInArray(int[] arr) {
+    		for (int i = 0; i < arr.length; i++) {
+    			for (int j = i + 1; j < arr.length; j++) {
+    				if (arr[i] == arr[j]) {
+    					return arr[i];
+    				}
+    			}
+    		}
+    		return 0;
+    	}
+    	
+    	public void gamling(int stake, int goal, int day) {
+    		int tempstake = stake;
+    		int win = 0;
+    		int loss = 0;
+    		for (int i = 0; i < day; i++) {
+    			while (tempstake > 0 && tempstake < goal) {
+    				if (Math.random() < 0.5) {
+    					tempstake++;
+    					win++;
+    				} else {
+    					tempstake--;
+    					loss++;// lose
+    				}
+    				if (tempstake == goal) {
+    					win++;
+    				}
+    			}
+    		}
+
+    		int arr[][] = new int[2][1];
+    		arr[0][0] = win;
+    		arr[1][0] = loss;
+
+    		System.out.println("the number of times the game won is " + arr[0][0]);
+    		System.out.println("The number of times the game loss is " + arr[1][0]);
+
+    	}
     	    
+    	/**
+    	 * @param i
+    	 * @return
+    	 */
+    	public static int powerOfTwo(int i) {
+    		return (int) Math.pow(2, i);
+
+    	}
+    	
+    	/**
+    	 * @param range
+    	 * @return
+    	 */
+    	public static int randomNumber(int range) {
+    		Random random = new Random();
+    		return (int) random.nextInt(range) + 1;// 1 to 6
+    	}
     	    	    
 }

@@ -13,7 +13,8 @@ public class Anagram {
 		System.out.print("Enter the number: ");
 		String x="";
 		int m=scanner.nextInt(),sum=0;
-		if(Utility.isPrime(m)==true) {
+		if(Utility.isPrime(m)==true) 
+		{
 			System.out.println(m);
 			int temp =m;
 			while(m>0) {
@@ -22,6 +23,7 @@ public class Anagram {
 				m=m/10;
 			}
 			int k = Integer.parseInt(x);
+			System.out.println(k);
 			if(Utility.isPrime(k)==true)
 			{
 				System.out.println("Anagram");
