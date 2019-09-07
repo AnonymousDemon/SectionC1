@@ -11,7 +11,7 @@ public class Magic {
 
 		Scanner scanner = new Scanner(System.in);
 
-		int n = Integer.parseInt("3");
+		int n = Integer.parseInt("4");
 		int range = (int) Math.pow(2, n);
 		System.out.println("Range is 0 to " + range);
 		Utility.magicNumber(range);

@@ -27,7 +27,7 @@ public class Coupon {
 		int coupon;
 		for (int i = 0; i < range; i++) {
 			coupon = Utility.randomNumber(range);// 2
-			arr[1][coupon] = arr[1][coupon] + 1;
+			arr[1][coupon] = arr[1][coupon]+1 ;
 
 		}
 

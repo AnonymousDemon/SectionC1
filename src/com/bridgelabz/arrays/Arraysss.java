@@ -53,7 +53,8 @@ public class Arraysss {
 		System.out.println();
 		pw.println("2D ARRAY INTEGER");
 
-		for (int i = 0; i < m; i++) {
+		for (int i = 0; i < m; i++) 
+		{
 			for (int j = 0; j < n; j++) {
 				pw.print("\t" + a[i][j] + " ");
 			}
@@ -64,7 +65,8 @@ public class Arraysss {
 		System.out.println();
 		pw.println("2D ARRAY DOUBLE");
 
-		for (int i = 0; i < m; i++) {
+		for (int i = 0; i < m; i++)
+		{
 			for (int j = 0; j < n; j++) {
 				pw.print("\t" + b[i][j] + " ");
 			}

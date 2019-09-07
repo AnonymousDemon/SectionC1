@@ -16,6 +16,7 @@ public class Insert {
 		System.out.println("enter the numbers");
 		int[] integers = new int[n];
 		
+		
 		sortUtility.sort(integers);;
 	}
 
